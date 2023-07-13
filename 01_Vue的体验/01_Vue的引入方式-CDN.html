@@ -1,0 +1,32 @@
+<!--
+ * @Author: Gauche楽
+ * @Date: 2023-07-13 20:54:29
+ * @LastEditors: Gauche楽
+ * @LastEditTime: 2023-07-13 20:58:30
+ * @FilePath: /vue3-learn/01_Vue的基础语法/01_vue的引入方式-CDN.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <!-- 使用vue -->
+    <script>
+        const app = Vue.createApp({
+            template: `<h2>hellow word</h2>`
+        })
+        // 挂载
+        app.mount('#app')
+    </script>
+</body>
+
+</html>

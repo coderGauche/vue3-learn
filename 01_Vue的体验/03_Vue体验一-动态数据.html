@@ -1,0 +1,33 @@
+<!--
+ * @Author: Gauche楽
+ * @Date: 2023-07-13 21:09:44
+ * @LastEditors: Gauche楽
+ * @LastEditTime: 2023-07-13 21:12:57
+ * @FilePath: /vue3-learn/01_Vue的基础语法/03_Vue体验一-动态数据.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            template: `<h2>hellow word{{title}}</h2>`,
+            data: () => {
+                return {
+                    title: 'xxxxx'
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+</body>
+
+</html>
