@@ -1,0 +1,53 @@
+<!--
+ * @Author: Gauche楽
+ * @Date: 2023-07-14 00:43:08
+ * @LastEditors: Gauche楽
+ * @LastEditTime: 2023-07-14 00:56:32
+ * @FilePath: /vue3-learn/03_Vue的语法/03_v-cloak指令使用.html
+-->
+<!-- 给标签加个斗篷，防止下面js没搞定呢直接原样输出{{name}}-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../01_Vue的体验/lib/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-cloak>{{name}}</h2>
+    </div>
+    <script>
+        setTimeout(() => {
+            const app = Vue.createApp({
+                data: () => {
+                    return {
+                        count: 0,
+                        name: 'Bruce Eclectic',
+                        age: 25,
+                        context: `<div style="color: red; font-size: 24rpx;">222</div>`
+                    }
+                },
+                methods: {
+                    add: function () {
+                        this.count++
+                    },
+                    dec: function () {
+                        this.count--
+                    }
+                },
+            })
+            app.mount("#app")
+        }, 3000)
+    </script>
+</body>
+
+</html>

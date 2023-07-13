@@ -1,0 +1,50 @@
+<!--
+ * @Author: Gauche楽
+ * @Date: 2023-07-14 00:59:10
+ * @LastEditors: Gauche楽
+ * @LastEditTime: 2023-07-14 01:06:06
+ * @FilePath: /vue3-learn/03_Vue的语法/03_v-memo指令使用.html
+-->
+<!-- 指定参数发生变换才能改变 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../01_Vue的体验/lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-memo="[name]">
+            <h2>{{name}}</h2>
+            <h2>{{age}}</h2>
+            <h2>{{count}}</h2>
+        </div>
+        <button @click="edit">修改</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data: () => {
+                return {
+                    count: 0,
+                    name: 'Bruce Eclectic',
+                    age: 25,
+                    context: `<div style="color: red; font-size: 24rpx;">222</div>`
+                }
+            },
+            methods: {
+                edit: function () {
+                    // 因为v - memo="[name]"指定了name
+                    // this.name = 'xxxx' //发生变化
+                    this.age = 'xxxx' //不发生变化
+                },
+            },
+        })
+        app.mount("#app")
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!--
+ * @Author: Gauche楽
+ * @Date: 2023-07-14 00:43:08
+ * @LastEditors: Gauche楽
+ * @LastEditTime: 2023-07-14 00:44:40
+ * @FilePath: /vue3-learn/03_Vue的语法/01_v-once指令使用.html
+-->
+<!-- 只渲染一次，不会发生改变 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../01_Vue的体验/lib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2 v-once>{{count}}</h2>
+        <button @click="add">+1</button>
+        <button @click="dec">-1</button>
+    </div>
+    <script> const app = Vue.createApp({
+            data: () => {
+                return {
+                    count: 0,
+                    name: 'Bruce Eclectic',
+                    age: 25
+                }
+            },
+            methods: {
+                add: function () {
+                    this.count++
+                },
+                dec: function () {
+                    this.count--
+                }
+            },
+        })
+        app.mount("#app")</script>
+</body>
+
+</html>
