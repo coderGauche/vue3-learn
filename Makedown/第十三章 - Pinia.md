@@ -64,14 +64,14 @@ counterStore.name = 'xxx'
 重置
 
 ```javascript
-const {counter } = counterStore
+const counterStore = useCounter()
 counterStore.$reset()
 ```
 
 改变state
 
 ```javascript
-const {counter } = counterStore
+const counterStore = useCounter()
 counterStore.$patch({
   name:'xxxx'
 })
@@ -79,8 +79,8 @@ counterStore.$patch({
 
 替换state
 
-```
-const {counter } = counterStore
+```javascript
+const counterStore = useCounter()
 counterStore.$state({
   name:'xxxx'
 })
@@ -88,12 +88,45 @@ counterStore.$state({
 
 ### 07. getters
 
-<img src="/Users/wuzaifa/Library/Application Support/typora-user-images/image-20230803013511112.png" alt="image-20230803013511112" style="zoom:40%;" />
+```javascript
+getters:{
+  dun1:(state)=>state.counter+1
+}
+```
 
-<img src="/Users/wuzaifa/Library/Application Support/typora-user-images/image-20230803013655141.png" alt="image-20230803013655141" style="zoom:40%;" />
+```javascript
+const counterStore = useCounter()
+counterStore.dun1()
 
-<img src="/Users/wuzaifa/Library/Application Support/typora-user-images/image-20230803014256294.png" alt="image-20230803014256294" style="zoom:40%;" />
+//访问当前自己的其他getters
+在store文件的getter种用this
+
+//访问其他的
+const userStore = useUser()
+userStore.name
+```
+
+
 
 ### 08. actions
 
-<img src="/Users/wuzaifa/Library/Application Support/typora-user-images/image-20230803014159574.png" alt="image-20230803014159574" style="zoom:40%;" />
+```javascript
+action:{
+  increment(){
+    this.counter++
+  }
+  randomCounter(){
+    this.counter = Math.random()
+  }
+}
+```
+
+```javascript
+const increment = () => {
+  counterStore.increment()
+}
+const randomClick = () => {
+  counterStore.randomCounter()
+}
+```
+

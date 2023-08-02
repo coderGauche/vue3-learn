@@ -9,8 +9,6 @@
 3. 使用app注册路由对象（use）
 4. 路由使用，通过<router-link>和<router-view>
 
-<img src="/Users/wuzaifa/Library/Application Support/typora-user-images/image-20230802230114646.png" alt="image-20230802230114646" style="zoom:33%;" />
-
 ### 02. 路由的默认路径
 
 重定向 `{path:'/',redirect:'/home'},`
@@ -154,7 +152,14 @@ not found:user/hahahha/134
 
 ### 12. 代码的页面跳转
 
-<img src="/Users/wuzaifa/Library/Application Support/typora-user-images/image-20230802232355503.png" alt="image-20230802232355503" style="zoom:40%;" />
+```
+this.$router.push('/home')
+this.$router.push({
+  path:'/home'
+})
+const router = useRouter()
+router.replace('/home')
+```
 
 ### 13. query方式参数
 
