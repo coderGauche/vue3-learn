@@ -2,21 +2,7 @@
  * @Author: Gauche楽
  * @Date: 2023-07-17 01:09:06
  * @LastEditors: Gauche楽
- * @LastEditTime: 2023-08-02 13:09:29
- * @FilePath: /05_composition/src/App.vue
--->
-<!--
- * @Author: Gauche楽
- * @Date: 2023-07-17 01:09:06
- * @LastEditors: Gauche楽
- * @LastEditTime: 2023-08-02 12:52:07
- * @FilePath: /05_composition/src/App.vue
--->
-<!--
- * @Author: Gauche楽
- * @Date: 2023-07-17 01:09:06
- * @LastEditors: Gauche楽
- * @LastEditTime: 2023-07-21 02:05:03
+ * @LastEditTime: 2023-08-03 00:12:14
  * @FilePath: /05_composition/src/App.vue
 -->
 <template>

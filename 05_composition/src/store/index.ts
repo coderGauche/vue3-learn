@@ -12,7 +12,7 @@ export const store = createStore({
     counter: 110,
   }),
   mutations: {
-    //不能执行异步操作
+    //不能执行异步操作 
     increment(state: any) {
       state.counter++;
     },
